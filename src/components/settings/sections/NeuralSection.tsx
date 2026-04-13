@@ -29,7 +29,9 @@ export const NeuralSection = ({ plugin }: { plugin: NeuralComposerPlugin }) => {
     settingsRef.current.empty();
     const container = settingsRef.current;
 
-    container.createEl('h3', { text: `Neural backend (${BACKEND_NAME})` });
+    new Setting(container)
+      .setName(`Neural backend (${BACKEND_NAME})`)
+      .setHeading();
 
     // --- SERVER CONNECTION MODE ---
     new Setting(container)
